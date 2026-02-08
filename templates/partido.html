@@ -13,23 +13,25 @@
         <adiv class="main">
             <div class="equipo">
                 <h1 class="titulo" id="equipo">Premini A</h1>
-                <table class="tabla" method="POST" action="/seleccionar_convocados">
-                    <tr>
-                        <th>Nom</th>
-                        <th>Número</th>
-                        <th>T</th>
-                        <th>C</th>
-                    </tr>
-                    {% for jugador in jugadores %}
-                    <tr>
-                        <td>{{ jugador.nombre }}</td>
-                        <td>{{ jugador.numero }}</td>
-                        <td><input type="checkbox" name="titular" class="check"/></td>
-                        <td><input type="checkbox" name="convocado" class="check" /></td>
-                    </tr>
-                    {% endfor%}
-                </table>
-                <a class="boton" href="/seleccionar_convocados">Comenzar partido</a>
+                <form method="POST" action="/seleccionar_convocados">
+                    <table class="tabla">
+                        <tr>
+                            <th>Nom</th>
+                            <th>Número</th>
+                            <th>T</th>
+                            <th>C</th>
+                        </tr>
+                        {% for jugador in jugadores %}
+                        <tr>
+                            <td>{{ jugador.nombre }}</td>
+                            <td>{{ jugador.numero }}</td>
+                            <td><input type="checkbox" name="titular" class="check"/></td>
+                            <td><input type="checkbox" name="convocado" class="check" /></td>
+                        </tr>
+                        {% endfor%}
+                    </table>
+                </form>
+                <button type="submit" class="boton" href="/seleccionar_convocados">Comenzar partido</button>
             </div>
         </div>
     </div>

@@ -37,12 +37,16 @@ def quitar():
     db.quitar_jugador(numero)
     return redirect ('/equipo')
 
-@app.route('/seleccionar_convocados')
+@app.route('/seleccionar_convocados', methods=['POST'])
 def seleccionar_convocados():
+    print("=== LLEGÓ AL ENDPOINT ===")
     convocados = request.form.getlist('convocado')
     titular = request.form.getlist('titular')
+    print("Convocados:", convocados)
+    print("Titulares:", titular)
     if len(convocados) >= 7:
-        redirect ('/partido')
+        return redirect('/partido')
+    return redirect ('/partido')
 
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0')
