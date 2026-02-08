@@ -1,4 +1,4 @@
-# 🏀 Gestor de Rotaciones de Baloncesto
+# Gestor de Rotaciones de Baloncesto
 
 > ⚠️ **Proyecto en desarrollo activo** - Esta aplicación está en construcción y todo está sujeto a mejoras y cambios.
 
@@ -160,3 +160,4 @@ Este proyecto está en desarrollo continuo. Algunas áreas en las que se está t
 ---
 
 *Proyecto en construcción - Todo está abierto a cambios y mejoras* 🏀
+
