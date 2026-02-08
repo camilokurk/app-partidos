@@ -25,13 +25,13 @@
                         <tr>
                             <td>{{ jugador.nombre }}</td>
                             <td>{{ jugador.numero }}</td>
-                            <td><input type="checkbox" name="titular" class="check"/></td>
-                            <td><input type="checkbox" name="convocado" class="check" /></td>
+                            <td><input type="checkbox" name="titular" value="{{ jugador.numero }}" class="check"/></td>
+                            <td><input type="checkbox" name="convocado" value="{{ jugador.numero }}" class="check" /></td>
                         </tr>
                         {% endfor%}
                     </table>
+                    <button type="submit" class="boton">Comenzar partido</button>
                 </form>
-                <button type="submit" class="boton" href="/seleccionar_convocados">Comenzar partido</button>
             </div>
         </div>
     </div>

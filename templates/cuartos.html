@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rock+Salt&family=SN+Pro:ital,wght@0,200..900;1,200..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=Special+Elite&display=swap" rel="stylesheet">
+<body>
+    <div class="contenido">
+        <div class="main">
+            <h1 class="titulo" id="equipo">Cuartos</h1>
+            <div class="cuartos">
+                <div class="arriba">
+                    <h1 class="titulo" id="cuarto">Cuarto {{ partido.cuarto_actual }}</h1>
+                </div>
+                <div class="abajo">
+                    <div class="izq">
+                        <table class="tabla" id="tablacuartos">
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Cuartos</th>
+                            </tr>
+                            {% for numero in partido.en_pista %}
+                                {% for jugador in jugadores %}
+                                    {% if jugador.numero == numero|string %}
+                                    <tr>
+                                        <td>{{ jugador.nombre }}</td>
+                                        <td>{{ partido.cuartos_jugados[numero|string] }}</td>
+                                    </tr>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endfor %}
+                        </table>
+                    </div>
+                    <div class="der">
+                         <table class="tabla" id="tablacuartos">
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Cuartos</th>
+                            </tr>
+                            {% for numero in banquillo %}
+                                {% for jugador in jugadores %}
+                                    {% if jugador.numero == numero|string %}
+                                    <tr>
+                                        <td>{{ jugador.nombre }}</td>
+                                        <td>{{ partido.cuartos_jugados[numero|string] }}</td>
+                                    </tr>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endfor %}
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
