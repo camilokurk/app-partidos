@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rock+Salt&family=SN+Pro:ital,wght@0,200..900;1,200..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=Special+Elite&display=swap" rel="stylesheet">
+<body>
+    <div class="contenido">
+        <div class="main">
+            <div class="equipo">
+                <h1 class="titulo" id="equipo">Premini A</h1>
+                <table class="tabla">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Número</th>
+                    </tr>
+                    {% for jugador in jugadores %}
+                    <tr>
+                        <td>{{ jugador.nombre }}</td>
+                        <td>{{ jugador.numero }}</td>
+                    </tr>
+                    {% endfor%}
+                </table>
+            </div>
+            <div class="agregarJugador">
+                <h1 class="titulo">Agregar jugador</h1>
+                <form class="form" method="POST" action="/agregar">
+                    <input type="text" name="nombre" placeholder="Nombre">
+                    <input type="number" name="numero" placeholder="Número">
+                    <button class="boton" type="submit">Agregar</button>
+                </form>
+            </div>
+            <div class="eliminarJugador">
+                <h1 class="titulo" id="eliminarjugador">Eliminar jugador</h1>
+                <form class="form" method="POST" action="/quitar">
+                    <input type="text" name="nombre" placeholder="Nombre">
+                    <input type="number" name="numero" placeholder="Número">
+                    <button class="boton" type="submit">Eliminar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <nav class="bottom-nav">
+        <a class="botonMenu" href="/equipo.html"></a>
+        <a class="botonMenu" href="/partido.html"></a>
+        <a class="botonMenu" href="/config.html"></a>
+    </nav>
+</body>
+</html>
