@@ -1,2 +1,0 @@
-def pedir_jugadores():
-    

@@ -21,7 +21,7 @@ body {
 }
 
 .contenido {
-    padding-bottom: 70px; /* Para que no quede tapado por el menú */
+    padding-bottom: 70px;
 }
 
 /* AGREGAR JUGADOR */
@@ -92,6 +92,10 @@ input:focus{
 
 /* EQUIPO */
 
+.equipo{
+    width: 300px;
+}
+
 table, th, td{
     border-bottom: 2px solid green;
     border-collapse: collapse;
@@ -100,6 +104,10 @@ table, th, td{
     color: white;
     font-family: "SN Pro", sans-serif;
     margin-bottom: 30px;
+}
+
+.check{
+    width: 15px;
 }
 
 /* MENÚ */

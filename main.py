@@ -17,7 +17,8 @@ def equipo():
 
 @app.route('/partido')
 def partido():
-    return render_template('partido.html')
+    jugadores = db.listar_jugadores()
+    return render_template('partido.html', jugadores=jugadores)
 
 @app.route('/config')
 def config():
@@ -35,6 +36,13 @@ def quitar():
     numero = request.form["numero"]
     db.quitar_jugador(numero)
     return redirect ('/equipo')
+
+@app.route('/seleccionar_convocados')
+def seleccionar_convocados():
+    convocados = request.form.getlist('convocado')
+    titular = request.form.getlist('titular')
+    if len(convocados) >= 7:
+        redirect ('/partido')
 
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0')
