@@ -76,7 +76,7 @@ def seleccionar_convocados():
 
         return redirect('/partido/cuartos')
     else:
-        return redirect('/seleccionar_convocados')
+        return redirect('/partido')
 
 @app.route('/partido/cuartos')
 def cuartos():
