@@ -162,6 +162,13 @@ table, th, td{
     padding: 5px;
 }
 
+#boton_cuartos{
+    margin-top: 10px;
+    border-radius: 15px;
+    width: 300px;
+    height: 30px;
+}
+
 .arriba{
     display: flex;
     flex-direction: row;
